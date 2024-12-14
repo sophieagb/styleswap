@@ -9,7 +9,7 @@ const Home = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    setItems(data.items); // Load items from mock JSON
+    setItems(data.items);
   }, []);
 
   return (
@@ -18,6 +18,9 @@ const Home = () => {
       <MainImage image={data.items[0].image} />
       <Actions />
       <SuggestedItems items={items} />
+      
+      <div className="button-container">
+      </div>
     </>
   );
 };
