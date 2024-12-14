@@ -15,7 +15,7 @@ header {
 
 header span {
   position: absolute;
-  right: 15px; /* Position the icon on the far right */
+  right: 15px; 
   font-size: 30px; 
 }
 
@@ -49,11 +49,11 @@ header h1 {
 }
 
 .actions button {
-  font-size: 30px; /* Increase icon size */
-  padding: 20px;   /* Increase padding for a larger button */
+  font-size: 30px;
+  padding: 20px;  
   border-radius: 50%;
-  width: 80px;  /* Set a fixed width */
-  height: 80px; /* Set a fixed height */
+  width: 80px;  
+  height: 80px; 
 }
 
 .actions butto n {
@@ -101,7 +101,6 @@ header h1 {
   color: #ffc107;
 }
 
-/* Example of filled stars */
 .suggested-items div:nth-child(1) .star-rating span:nth-child(-n+4) {
   color: #ffc107;
 }
@@ -120,7 +119,7 @@ header h1 {
   align-items: center;
   background-color: black;
   color: white;
-  padding: 20px; /* Increased padding */
+  padding: 20px; 
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -131,5 +130,29 @@ header h1 {
   color: white;
   text-align: center;
   flex: 1;
-  font-size: 22px; /* Increased font size */
+  font-size: 22px; 
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #555;
 }
