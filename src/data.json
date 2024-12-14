@@ -1,0 +1,34 @@
+{
+    "items": [
+      {
+        "id": 1,
+        "name": "Pink Lace Top",
+        "price": 25.50,
+        "image": "images/image1pg1.png",
+        "rating": 4.5
+      },
+      {
+        "id": 2,
+        "name": "Silk Maxi Skirt",
+        "price": 50.00,
+        "image": "images/image1pg2.png",
+        "rating": 5
+      },
+      {
+        "id": 3,
+        "name": "Long Sleeve Top",
+        "price": 48.54,
+        "image": "images/image2pg1.png",
+        "rating": 4
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "username": "styleswap_user009",
+        "likedItems": [1, 3],
+        "activeListings": []
+      }
+    ]
+  }
+  
