@@ -5,6 +5,7 @@ import SignUpPage from './SignUpPage';
 import SignInPage from './SignInPage';
 import Home from './Main/Home';
 import ProductDetails from './ProductDetails';
+import ChatPage from './ChatPage';
 
 
 const App = () => {
@@ -51,6 +52,7 @@ const App = () => {
           }
         />
         <Route path="/product-details" element={<ProductDetails />} />
+        <Route path="/chat" element={<ChatPage />} />
       </Routes>
     </Router>
   );
