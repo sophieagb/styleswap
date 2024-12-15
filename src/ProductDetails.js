@@ -11,7 +11,7 @@ const ProductDetails = () => {
   return (
     <>
       <div className="product-details-header">
-        <button onClick={() => navigate(-1)}>←</button>
+        <button onClick={() => navigate(-2)}>←</button>
         <h1>Details</h1>
         <div className="spacer"></div>
       </div>
