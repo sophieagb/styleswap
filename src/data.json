@@ -5,7 +5,10 @@
         "name": "Pink Lace Top",
         "price": 25.50,
         "image": "images/image1pg1.png",
-        "rating": 4.5
+        "rating": 4.5,
+        "description": "A magenta colored sleeveless top with stitched sequins. Perfect for a casual outing or party.",
+        "sizes": ["XS", "S", "M", "L", "XL"],
+        "color": "Magenta"
       },
       {
         "id": 2,

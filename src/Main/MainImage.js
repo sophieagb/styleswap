@@ -1,11 +1,13 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import './MainImage.css';
 
 const MainImage = ({ image }) => {
   return (
-    <div className="main-image-container">
-      <img src={image} alt="Main Item" className="main-image" />
-    </div>
+    <Link to="/product-details">
+      <div className="main-image-container">
+        <img src={image} alt="Main Product" className="main-image" />
+      </div>
+    </Link>
   );
 };
 

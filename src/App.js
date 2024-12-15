@@ -4,6 +4,7 @@ import LandingPage from './LandingPage';
 import SignUpPage from './SignUpPage';
 import SignInPage from './SignInPage';
 import Home from './Main/Home';
+import ProductDetails from './ProductDetails';
 
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
             )
           }
         />
+        <Route path="/product-details" element={<ProductDetails />} />
       </Routes>
     </Router>
   );
