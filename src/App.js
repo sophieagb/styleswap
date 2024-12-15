@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-do
 import LandingPage from './LandingPage';
 import SignUpPage from './SignUpPage';
 import SignInPage from './SignInPage';
-import Home from './Home';
+import Home from './Main/Home';
 
 
 const App = () => {

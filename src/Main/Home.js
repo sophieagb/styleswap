@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
-import MainImage from './Main';
+import MainImage from './MainImage';
 import SuggestedItems from './SuggestedItems';
 import Actions from './Actions';
-import data from './data.json';
+import Footer from './Footer';
+import data from '../data.json';
 
 const Home = () => {
   const [items, setItems] = useState([]);
@@ -18,9 +19,7 @@ const Home = () => {
       <MainImage image={data.items[0].image} />
       <Actions />
       <SuggestedItems items={items} />
-      
-      <div className="button-container">
-      </div>
+      <Footer />
     </>
   );
 };
