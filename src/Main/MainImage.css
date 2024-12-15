@@ -1,0 +1,14 @@
+.main-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; 
+    padding: 0;
+}
+
+.main-image {
+    width: 100%; 
+    max-width: 375px; 
+    height: auto; 
+    border-radius: 37px;
+}

@@ -9,16 +9,30 @@
       },
       {
         "id": 2,
-        "name": "Silk Maxi Skirt",
-        "price": 50.00,
-        "image": "images/image1pg2.png",
-        "rating": 5
-      },
+        "name": "Black Top",
+        "price": 35.00,
+        "image": "images/image3pg1.png",
+        "rating": 4.5
+      },  
       {
         "id": 3,
-        "name": "Long Sleeve Top",
+        "name": "Silk Maxi Skirt",
         "price": 48.54,
-        "image": "images/image2pg1.png",
+        "image": "images/image4pg1.png",
+        "rating": 3
+      },
+      {
+        "id": 4,
+        "name": "Black Top",
+        "price": 35.00,
+        "image": "images/image2pg2.png",
+        "rating": 5
+      },    
+      {
+        "id": 5,
+        "name": "Button-Up Top",
+        "price": 32.99,
+        "image": "images/imagepg6.png",
         "rating": 4
       }
     ],

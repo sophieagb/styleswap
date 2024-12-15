@@ -1,0 +1,27 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000;
+    height: 96px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+  }
+  
+  .footer-icon img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    filter: brightness(100%);
+    transition: filter 0.3s ease;
+  }
+  
+  .footer-icon img:hover {
+    filter: brightness(150%);
+  }
+  
+  .footer-icon img.active {
+    filter: brightness(200%);
+  }
+  

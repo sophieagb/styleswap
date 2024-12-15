@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    margin-top: 25px; 
+  }
+  
+  .title {
+    font-size: 35px;
+    font-family: 'Prata', serif;
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  .icon-wrapper {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%); 
+  }
+  
+  .icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+  
