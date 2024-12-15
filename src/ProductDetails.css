@@ -10,6 +10,20 @@
     z-index: 1000; 
   }
   
+  .heart-icon {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .heart-icon.liked {
+    filter: drop-shadow(0px 0px 5px red); /* Optional liked effect */
+  }
+
   .product-details-header button {
     background: none;
     border: none;

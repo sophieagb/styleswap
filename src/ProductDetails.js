@@ -14,6 +14,11 @@ const ProductDetails = () => {
         <button onClick={() => navigate(-2)}>←</button>
         <h1>Details</h1>
         <div className="spacer"></div>
+        <img
+            src="Images/action3.png"
+            alt="Heart"
+            className="heart-icon"
+        />
       </div>
       <div className="product-details">
         <h1 className="product-name">{product.name}</h1>
