@@ -34,7 +34,7 @@ const SignUpPage = ({ onSignUp }) => {
           required
         />
 
-        <label htmlFor="email" className="label">Uni Email</label>
+        <label htmlFor="email" className="label">Columbia/Barnard Email</label>
         <input
           type="email"
           id="email"
