@@ -1,32 +1,79 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
-import MainImage from './MainImage';
-import SuggestedItems from './SuggestedItems';
 import Actions from './Actions';
+import SuggestedItems from './SuggestedItems';
 import Footer from './Footer';
-import data from '../data.json';
+import shoppingHomeData from '../ShoppingHome.json'; // Import big images
+import data from '../data.json'; // Import for SuggestedItems
 
 const Home = () => {
-  const [items, setItems] = useState([]);
+  const [bigImages, setBigImages] = useState([]); // State for big images (from ShoppingHome.json)
+  const [currentIndex, setCurrentIndex] = useState(0); // Tracks the current big image index
+  const [suggestedItems, setSuggestedItems] = useState([]); // State for SuggestedItems (from data.json)
   const navigate = useNavigate();
 
   useEffect(() => {
-    setItems(data.items);
+    // Load big images
+    setBigImages(shoppingHomeData.images);
+    // Load suggested items
+    setSuggestedItems(data.items);
   }, []);
 
-  const handleMainImageClick = () => {
-    const mainProduct = data.items[0];
-    navigate('/product-details', { state: mainProduct });
+  const handleNextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % bigImages.length);
+  };
+
+  const handleImageClick = () => {
+    const currentImage = bigImages[currentIndex];
+    navigate('/product-details', { state: currentImage });
   };
 
   return (
     <>
       <Header />
-      <div onClick={handleMainImageClick} style={{ cursor: 'pointer' }}>
-        <MainImage image={data.items[0].image} />
-      </div>      <Actions />
-      <SuggestedItems items={items} />
+      {/* Centered Big Image Section */}
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '450px',
+          margin: '10px auto',
+        }}
+      >
+        <div
+          style={{
+            width: '350px',
+            height: '350px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#f0f0f0',
+            borderRadius: '10px',
+            overflow: 'hidden',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          }}
+          onClick={handleImageClick}
+        >
+          {bigImages.length > 0 && (
+            <img
+              src={bigImages[currentIndex].image} // Use big images from ShoppingHome.json
+              alt={`Image ${bigImages[currentIndex].id}`}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                cursor: 'pointer',
+              }}
+            />
+          )}
+        </div>
+      </div>
+      {/* Actions Buttons Section */}
+      <Actions onNextImage={handleNextImage} />
+      {/* Suggested Items Section */}
+      <SuggestedItems items={suggestedItems} /> {/* Uses data.json */}
       <Footer />
     </>
   );
