@@ -1,7 +1,7 @@
 /* ProfilePage.css */
 .profile-container {
     text-align: center;
-    padding: 18px;
+    padding: 0px;
   }
   
   .profile-container h1 {
@@ -34,6 +34,7 @@
 
 /* Profile picture styles */
 .profile-pic {
+    padding-top: 20px; 
     width: 100px; 
     height: 100px;
     border-radius: 50%; 
@@ -57,16 +58,16 @@
     position: absolute;
     top: 20px; 
     right: 20px;
-    padding: 15px;
+    padding: 4px;    
 }
 
 
 /* Listings and Likes section */
 .listings {
-    margin-top: 20px;
+    margin-top: 38px;
 }
 .likes {
-    margin-top: 180px;
+    margin-top: 188px;
 }
 
 /* Make the "Active Listings" and "Liked Items" stand out */
@@ -78,9 +79,9 @@
 }
 
   .box1 {
-    width: 30%;
+    width: 78%;
     height: 100px;
-    border: 4.5px solid #ECE0EC; 
+    border: 5px solid #ECE0EC; 
     padding: 20px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -92,16 +93,16 @@
 }
 
 .box2 {
-    width: 30%;
-    height: 250px;
-    border: 4.5px solid #ECE0EC; 
+    width: 78%;
+    height: 230px;
+    border: 5px solid #ECE0EC; 
     padding: 20px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     border-radius: 25px; 
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 51%;
     bottom: 50%;
     transform: translate(-50%); 
 }
@@ -110,8 +111,8 @@
 .image-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
-    grid-gap: 10%; 
-    margin-top: 0px;
+    grid-gap: 4%; 
+    margin-top: 10px;
     margin-bottom: 50px;
     
 }
@@ -125,7 +126,7 @@
 }
 
 .scroll-image{
-    margin-top: 250px;
+    margin-top: 220px;
     width: 40px; 
     height: 35px;
 }
