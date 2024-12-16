@@ -1,29 +1,35 @@
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    position: relative;
-    margin-top: 25px; 
-  }
-  
-  .title {
-    font-size: 35px;
-    font-family: 'Prata', serif;
-    font-weight: 400;
-    margin: 0;
-  }
-  
-  .icon-wrapper {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%); 
-  }
-  
-  .icon {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  margin-top: 25px; 
+}
+
+.title {
+  font-size: 35px;
+  font-family: 'Prata', serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+.icon-wrapper {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%); 
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* Ensures smooth resizing transition */
+}
+
+/* Animation class for the cart icon */
+.icon.animate {
+  transform: scale(1.5); /* Make the cart icon bigger */
+  transition: transform 0.3s ease-in-out; /* Ensure it smoothly shrinks back */
+}

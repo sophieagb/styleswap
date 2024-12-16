@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import Footer from './Main/Footer'; // Correct import path for Footer
+import Footer from './Main/Footer'; // Correct import path
 import './CartPage.css';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
 
-  // Fetch cart items from the backend
+  // Fetch cart items and restore selected options from localStorage
   useEffect(() => {
     fetch('http://127.0.0.1:5000/cart')
       .then((response) => response.json())
       .then((data) => {
         if (Array.isArray(data)) {
-          setCartItems(data);
+          const savedOptions = JSON.parse(localStorage.getItem('cartOptions')) || {};
+          const updatedItems = data.map((item) => ({
+            ...item,
+            option: savedOptions[item.id] || 'Purchase',
+          }));
+          setCartItems(updatedItems);
         } else {
           console.error('Unexpected data format for cart:', data);
         }
@@ -19,33 +24,45 @@ const CartPage = () => {
       .catch((error) => console.error('Error fetching cart items:', error));
   }, []);
 
-  // Function to delete a specific item
-  const handleDeleteItem = (itemId) => {
-    fetch('http://127.0.0.1:5000/cart', {
-      method: 'POST', // Simulating item deletion
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: itemId, delete: true }),
-    })
-      .then(() => setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId)))
-      .catch((error) => console.error('Error deleting item:', error));
+  const handleOptionChange = (id, newOption) => {
+    setCartItems((prevItems) => {
+      const updatedItems = prevItems.map((item) =>
+        item.id === id ? { ...item, option: newOption } : item
+      );
+      const cartOptions = updatedItems.reduce((acc, item) => {
+        acc[item.id] = item.option;
+        return acc;
+      }, {});
+      localStorage.setItem('cartOptions', JSON.stringify(cartOptions));
+      return updatedItems;
+    });
   };
 
-  // Function to clear the entire cart
+  const handleDeleteItem = (itemId) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+    fetch('http://127.0.0.1:5000/cart', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: itemId, delete: true }),
+    }).catch((error) => console.error('Error deleting item:', error));
+  };
+
   const handleClearCart = () => {
     fetch('http://127.0.0.1:5000/cart', { method: 'DELETE' })
-      .then(() => setCartItems([]))
+      .then(() => {
+        setCartItems([]);
+        localStorage.removeItem('cartOptions');
+      })
       .catch((error) => console.error('Error clearing cart:', error));
   };
 
   return (
     <div className="cart-page">
-      {/* Custom Header */}
       <div className="cart-header">
         <h1 className="cart-title">STYLE SWAP</h1>
         <img src="/images/shop.png" alt="Cart Icon" className="cart-icon-large" />
       </div>
 
-      {/* Cart Items */}
       <div className="cart-container">
         {cartItems.length === 0 ? (
           <p className="empty-cart">Your cart is empty</p>
@@ -64,20 +81,38 @@ const CartPage = () => {
                   <h3>{item.name}</h3>
                   <p>Size: {item.size}</p>
                   <p>Color: {item.color}</p>
-                  <p>Price: ${item.price.toFixed(2)}</p>
+                  <p className="cart-item-price">${item.price.toFixed(2)}</p>
+                </div>
+                <div className="cart-item-price-option">
+                  <select
+                    className="cart-dropdown"
+                    value={item.option}
+                    onChange={(e) => handleOptionChange(item.id, e.target.value)}
+                  >
+                    <option value="Purchase">Purchase</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Swap">Swap</option>
+                  </select>
                 </div>
               </li>
             ))}
           </ul>
         )}
         {cartItems.length > 0 && (
-          <button onClick={handleClearCart} className="clear-cart-button">
-            Clear Cart
-          </button>
+          <div className="cart-buttons">
+            <button onClick={handleClearCart} className="clear-cart-button">
+              Clear Cart
+            </button>
+            <button
+              className="checkout-button"
+              onClick={() => alert('Checkout functionality not implemented yet.')}
+            >
+              Checkout
+            </button>
+          </div>
         )}
       </div>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

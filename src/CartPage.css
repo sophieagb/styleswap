@@ -4,109 +4,142 @@
     min-height: 100vh;
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
-  }
-  
-  /* Custom Header */
-  .cart-header {
+}
+
+/* Custom Header */
+.cart-header {
     text-align: center;
-    margin: 10px 0; /* Reduced top margin */
-  }
-  
-  .cart-title {
+    margin: 10px 0;
+}
+
+.cart-title {
     font-size: 35px;
     font-family: 'Prata', serif;
     margin-bottom: 5px;
-  }
-  
-  .cart-icon-large {
+}
+
+.cart-icon-large {
     width: 80px;
     height: 80px;
-    margin-bottom: 10px; /* Space between icon and items */
-  }
-  
-  /* Cart Container */
-  .cart-container {
+    margin-bottom: 10px;
+}
+
+/* Cart Container */
+.cart-container {
     width: 100%;
-    max-width: 400px; /* Mobile-friendly width */
-    margin: 0 auto; /* Center horizontally */
-    flex: 1; /* Push footer to bottom */
-    padding: 10px 5px; /* Reduced padding */
-    overflow-y: auto; /* Scroll if content overflows */
-  }
-  
-  /* Empty Cart Message */
-  .empty-cart {
-    text-align: center;
-    font-size: 18px;
-    color: #555;
-    margin-top: 20px;
-  }
-  
-  /* Cart List */
-  .cart-list {
+    max-width: 400px;
+    margin: 0 auto;
+    flex: 1;
+    padding: 10px 5px;
+    overflow-y: auto;
+}
+
+/* Cart List */
+.cart-list {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  /* Individual Cart Item */
-  .cart-item {
+}
+
+/* Individual Cart Item */
+.cart-item {
     display: flex;
     align-items: center;
-    background-color: #f7eaf7; /* Updated pink background */
+    background-color: #f7eaf7;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 5px; /* Smaller spacing */
+    margin-bottom: 10px;
     padding: 10px;
     position: relative;
-  }
-  
-  /* Delete Button */
-  .delete-button {
+}
+
+/* Delete Button */
+.delete-button {
     position: absolute;
     top: 5px;
-    right: 5px;
+    right: 5px; /* Right corner for the X button */
     background: none;
     border: none;
     font-size: 20px;
-    color: black; /* Black color */
+    color: black;
     cursor: pointer;
-  }
-  
-  .delete-button:hover {
+}
+
+.delete-button:hover {
     color: #333;
-  }
-  
-  /* Cart Item Image */
-  .cart-item-image {
+}
+
+/* Cart Item Image */
+.cart-item-image {
     width: 70px;
     height: 70px;
     object-fit: cover;
     border-radius: 8px;
     margin-right: 10px;
-  }
-  
-  /* Cart Item Details */
-  .cart-item-details {
+}
+
+/* Cart Item Details */
+.cart-item-details {
     flex: 1;
     text-align: left;
-  }
-  
-  .cart-item-details h3 {
+}
+
+.cart-item-details h3 {
     margin: 0;
     font-size: 16px;
-  }
-  
-  .cart-item-details p {
+}
+
+.cart-item-details p {
     margin: 2px 0;
     font-size: 14px;
     color: #555;
-  }
-  
-  /* Clear Cart Button */
-  .clear-cart-button {
-    display: block;
-    margin: 10px auto;
+}
+
+/* Price Styling */
+.cart-item-price {
+    font-weight: bold;
+    color: black; /* Ensure black color */
+    margin-top: 5px;
+}
+
+/* Dropdown Section */
+.cart-item-price-option {
+    position: absolute;
+    bottom: 10px; /* Near the bottom */
+    right: 10px; /* Align to bottom-right corner */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.cart-dropdown {
+    width: 120px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cart-dropdown:focus {
+    outline: none;
+    border-color: #ccc;
+}
+
+/* Buttons Container */
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto 0;
+    padding: 0 5px;
+}
+
+.clear-cart-button,
+.checkout-button {
     background-color: black;
     color: white;
     border: none;
@@ -114,9 +147,18 @@
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
-  }
-  
-  .clear-cart-button:hover {
+    text-align: center;
+    width: 45%;
+}
+
+.clear-cart-button:hover {
     background-color: #333;
-  }
-  
+}
+
+.checkout-button {
+    background-color: #4CAF50;
+}
+
+.checkout-button:hover {
+    background-color: #45a049;
+}

@@ -4,8 +4,8 @@
         "id": 1, 
         "image": "images/image1pg1.png", 
         "title": "Pink Lace Top", 
-        "size": "M", 
-        "color": "Pink", 
+        "size": "S", 
+        "color": "Magenta", 
         "price": 25.50 
       },
       { 
@@ -39,6 +39,22 @@
         "size": "S", 
         "color": "Purple", 
         "price": 30.00 
+      },
+      { 
+        "id": 6, 
+        "image": "images/shopping_home_6.jpeg", 
+        "title": "Pant Suit", 
+        "size": "L", 
+        "color": "Brown", 
+        "price": 50.00 
+      },
+      { 
+        "id": 7, 
+        "image": "images/shopping_home_7.jpeg", 
+        "title": "Patterned Blazer", 
+        "size": "L", 
+        "color": "Brown", 
+        "price": 50.00 
       }
     ]
   }

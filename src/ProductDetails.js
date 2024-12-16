@@ -11,7 +11,7 @@ const ProductDetails = () => {
   return (
     <>
       <div className="product-details-header">
-        <button onClick={() => navigate(-2)}>←</button>
+        <button onClick={() => navigate(-1)}>←</button>
         <h1>Details</h1>
         <div className="spacer"></div>
         <img
@@ -28,7 +28,7 @@ const ProductDetails = () => {
         <h3 className="size-selection">Size Selection</h3>
             <div class="size-options">
                 <button class="size-button">XS</button>
-                <button class="size-button">S</button>
+                <button class="size-button active">S</button>
                 <button class="size-button">M</button>
                 <button class="size-button">L</button>
                 <button class="size-button">XL</button>
