@@ -2,7 +2,7 @@ import React from 'react';
 import './SuggestedItems.css';
 
 const SuggestedItems = ({ items }) => {
-  // Exclude the first item by filtering items with id > 1
+  // exclude the first item by filtering items with id > 1
   const filteredItems = items.filter(item => item.id !== 1);
 
   const renderStars = (rating) => {
