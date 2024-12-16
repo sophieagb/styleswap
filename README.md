@@ -20,4 +20,6 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### To run the Flask backend:
-In another terminal, run: python backend/app.py
+
+In another terminal, run: 
+### `python backend/app.py` 
