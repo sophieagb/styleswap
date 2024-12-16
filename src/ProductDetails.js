@@ -28,7 +28,7 @@ const ProductDetails = () => {
         <h3 className="size-selection">Size Selection</h3>
             <div class="size-options">
                 <button class="size-button">XS</button>
-                <button class="size-button active">S</button>
+                <button class="size-button">S</button>
                 <button class="size-button">M</button>
                 <button class="size-button">L</button>
                 <button class="size-button">XL</button>

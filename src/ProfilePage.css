@@ -43,8 +43,9 @@
 }
 
 /* Username styling */
-.username {
-    font-size: 0.8px;
+.profile-container .username {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
     color: #201f21; 
 }
 

@@ -8,7 +8,7 @@ const ChatPage = () => {
   const chats = [
     {
       id: 1,
-      username: '@styleswap_user123',
+      username: 'Sophie',
       avatar: '/images/avatar1.png',
       item: '/images/chat1.png',
       lastMessage: 'Sounds great! Sunday works!',
@@ -16,15 +16,15 @@ const ChatPage = () => {
     },
     {
       id: 2,
-      username: '@styleswap_user456',
+      username: 'Srin',
       avatar: '/images/avatar2.png',
       item: '/images/chat2.png',
       lastMessage: 'Seen',
-      timestamp: '2n ago',
+      timestamp: '2h ago',
     },
     {
       id: 3,
-      username: '@styleswap_user789',
+      username: 'Bhavya',
       avatar: '/images/avatar3.png',
       item: '/images/image1pg1.png',
       lastMessage: 'Seen',
