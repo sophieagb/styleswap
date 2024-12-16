@@ -56,7 +56,7 @@
 }
 
 .chat-bubble.sent {
-  margin-bottom: 4px;
+  margin-bottom: 15px;
   justify-content: flex-end;
 }
 
