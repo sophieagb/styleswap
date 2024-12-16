@@ -1,0 +1,141 @@
+/* ProfilePage.css */
+.profile-container {
+    text-align: center;
+    padding: 18px;
+  }
+  
+  .profile-container h1 {
+    font-size: 2rem;
+  }
+  
+  .profile-container p {
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Prata', serif;
+    height: 100vh; 
+    background-color: #FDFDFA; 
+}
+
+.top-section {
+    width: 100%;
+    height: 20vh; 
+    background-color: #ECE0EC; 
+}
+
+/* Profile container */
+.profile-container {
+    text-align: center;
+}
+
+
+/* Profile picture styles */
+.profile-pic {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    
+}
+
+/* Username styling */
+.username {
+    font-size: 0.8px;
+    color: #201f21; 
+}
+
+/* Styling for the rest of the content */
+.content {
+    padding: 0%;
+}
+
+/* Cart icon positioning */
+.cart-icon {
+    position: absolute;
+    top: 20px; 
+    right: 20px;
+    padding: 15px;
+}
+
+
+/* Listings and Likes section */
+.listings {
+    margin-top: 20px;
+}
+.likes {
+    margin-top: 180px;
+}
+
+/* Make the "Active Listings" and "Liked Items" stand out */
+.listings p, .likes p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: sticky;
+}
+
+  .box1 {
+    width: 30%;
+    height: 100px;
+    border: 4.5px solid #ECE0EC; 
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 25px; 
+    position: absolute;
+    left: 50%;
+    top: 28%;
+    transform: translate(-50%); 
+}
+
+.box2 {
+    width: 30%;
+    height: 250px;
+    border: 4.5px solid #ECE0EC; 
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 25px; 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%); 
+}
+
+/* Grid layout for the images inside box2 */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 10%; 
+    margin-top: 0px;
+    margin-bottom: 50px;
+    
+}
+
+/* Image styling */
+.item-image {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    
+}
+
+.scroll-image{
+    margin-top: 250px;
+    width: 40px; 
+    height: 35px;
+}
+
+.plus-icon, .heart-icon {
+    width: 17px; 
+    height: 16px;
+    margin-left: 10px;
+}
+
+.plus-icon:hover, .heart-icon:hover {
+    cursor: pointer;
+}
