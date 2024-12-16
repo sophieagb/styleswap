@@ -28,7 +28,7 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 450px; /* Ensures the block remains centered vertically */
+  height: 400px; /* Ensures the block remains centered vertically */
   margin-bottom: 10px;
 }
 

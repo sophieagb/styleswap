@@ -20,14 +20,43 @@ const Home = () => {
     setSuggestedItems(data.items);
   }, []);
 
+  // Function to move to the next image
   const handleNextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % bigImages.length);
   };
 
+  // Function to handle clicking on the big image
   const handleImageClick = () => {
     const currentImage = bigImages[currentIndex];
     navigate('/product-details', { state: currentImage });
   };
+
+  // Function to handle adding the current item to the cart
+  // Function to handle adding the current item to the cart
+  const handleAddToCart = () => {
+    const currentProduct = bigImages[currentIndex];
+    console.log('Adding to cart:', currentProduct); // Network log
+
+    fetch('http://127.0.0.1:5000/cart', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: currentProduct.id,
+        name: currentProduct.title, // Use title from shoppingHome.json
+        price: currentProduct.price,
+        image: currentProduct.image,
+        size: currentProduct.size,
+        color: currentProduct.color,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Cart Updated:', data);
+        alert('Item added to cart successfully!');
+      })
+      .catch((error) => console.error('Error adding to cart:', error));
+  };
+
 
   return (
     <>
@@ -58,7 +87,7 @@ const Home = () => {
         >
           {bigImages.length > 0 && (
             <img
-              src={bigImages[currentIndex].image} // Use big images from ShoppingHome.json
+              src={bigImages[currentIndex].image}
               alt={`Image ${bigImages[currentIndex].id}`}
               style={{
                 width: '100%',
@@ -71,7 +100,7 @@ const Home = () => {
         </div>
       </div>
       {/* Actions Buttons Section */}
-      <Actions onNextImage={handleNextImage} />
+      <Actions onNextImage={handleNextImage} onAddToCart={handleAddToCart} />
       {/* Suggested Items Section */}
       <SuggestedItems items={suggestedItems} /> {/* Uses data.json */}
       <Footer />

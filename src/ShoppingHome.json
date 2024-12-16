@@ -1,10 +1,45 @@
 {
     "images": [
-      { "id": 1, "image": "images/image1pg1.png", "price": 25.50 },
-      { "id": 2, "image": "images/home_shopping2.jpeg", "price": 25.50 },
-      { "id": 3, "image": "images/home_shopping3.jpeg", "price": 25.50},
-      { "id": 4, "image": "images/home_shopping4.jpeg", "price": 25.50 },
-      { "id": 5, "image": "images/home_shopping5.jpeg", "price": 25.50 }
+      { 
+        "id": 1, 
+        "image": "images/image1pg1.png", 
+        "title": "Pink Lace Top", 
+        "size": "M", 
+        "color": "Pink", 
+        "price": 25.50 
+      },
+      { 
+        "id": 2, 
+        "image": "images/home_shopping2.jpeg", 
+        "title": "Red Vest Top", 
+        "size": "M", 
+        "color": "Red", 
+        "price": 20.00 
+      },
+      { 
+        "id": 3, 
+        "image": "images/home_shopping3.jpeg", 
+        "title": "Flower Patterned Top", 
+        "size": "S", 
+        "color": "Black", 
+        "price": 30.00 
+      },
+      { 
+        "id": 4, 
+        "image": "images/home_shopping4.jpeg", 
+        "title": "Flower Vest", 
+        "size": "M", 
+        "color": "Cream", 
+        "price": 60.00 
+      },
+      { 
+        "id": 5, 
+        "image": "images/home_shopping5.jpeg", 
+        "title": "Purple Lace Shirt", 
+        "size": "S", 
+        "color": "Purple", 
+        "price": 30.00 
+      }
     ]
   }
   

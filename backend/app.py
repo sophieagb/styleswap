@@ -1,38 +1,34 @@
-from flask import Flask, request, session, jsonify
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'supersecretkey'  # Used for Flask session storage
+CORS(app)  # Enable CORS to allow requests from your React frontend
 
-# Sample Products (could be replaced with a real database)
-products = [
-    {"id": 1, "name": "Pink Lace Top", "price": 25.50, "image": "images/image1pg1.png"},
-    {"id": 2, "name": "Black Top", "price": 35.00, "image": "images/image3pg1.png"},
-    {"id": 3, "name": "Silk Maxi Skirt", "price": 48.54, "image": "images/image4pg1.png"},
-    {"id": 4, "name": "Black Top", "price": 35.00, "image": "images/image2pg2.png"},
-    {"id": 5, "name": "Button-Up Top", "price": 32.99, "image": "images/imagepg6.png"}
-]
+# Temporary in-memory cart storage
+cart = []
+
+# Route to get cart items
+@app.route('/cart', methods=['GET'])
+def get_cart():
+    return jsonify(cart)  # Return the array directly
 
 # Route to add an item to the cart
-@app.route('/add_to_cart', methods=['POST'])
+@app.route('/cart', methods=['POST'])
 def add_to_cart():
-    item_data = request.json.get('item')
-    if 'cart' not in session:
-        session['cart'] = []
+    data = request.json
+    required_fields = ['id', 'name', 'price', 'image', 'size', 'color']
     
-    session['cart'].append(item_data)
-    return jsonify({'message': f'Item {item_data["name"]} added to cart successfully!'})
+    # Ensure all fields are present
+    if all(field in data for field in required_fields):
+        cart.append(data)
+        return jsonify({'message': 'Item added to cart', 'cart': cart}), 201
+    return jsonify({'error': 'Invalid item data'}), 400
 
-# Route to view cart contents
-@app.route('/cart', methods=['GET'])
-def view_cart():
-    cart = session.get('cart', [])
-    return jsonify({'cart': cart})
-
-# Route to clear the cart (optional)
-@app.route('/clear_cart', methods=['POST'])
+# Route to clear the cart
+@app.route('/cart', methods=['DELETE'])
 def clear_cart():
-    session['cart'] = []
-    return jsonify({'message': 'Cart cleared successfully!'})
+    cart.clear()
+    return jsonify({'message': 'Cart cleared'}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
