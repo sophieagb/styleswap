@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './ChatDetails.css';
 
@@ -27,6 +27,31 @@ const ChatDetails = () => {
     },
   ]);
 
+  const [newMessage, setNewMessage] = useState('');
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const handleSendMessage = () => {
+    if (newMessage.trim() === '') return; 
+
+    const newMessageObject = {
+      id: messages.length + 1,
+      sender: 'You',
+      text: newMessage,
+      type: 'sent',
+    };
+
+    setMessages((prevMessages) => [...prevMessages, newMessageObject]); 
+    setNewMessage('');
+  };
+
   if (!chat) {
     return <div>Chat not found</div>;
   }
@@ -46,6 +71,7 @@ const ChatDetails = () => {
         </div>
       </div>
 
+      {/* Messages Section */}
       <div className="chat-messages">
         {messages.map((message) => (
           <div
@@ -73,15 +99,21 @@ const ChatDetails = () => {
             )}
           </div>
         ))}
+        <div ref={messagesEndRef}></div>
       </div>
 
+      {/* Input Section */}
       <div className="chat-input">
         <input
           type="text"
           placeholder="Write a message..."
           className="message-input"
+          value={newMessage}
+          onChange={(e) => setNewMessage(e.target.value)} 
         />
-        <button className="send-button">➤</button>
+        <button className="send-button" onClick={handleSendMessage}>
+          ➤
+        </button>
       </div>
     </div>
   );
