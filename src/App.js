@@ -6,6 +6,7 @@ import SignInPage from './SignInPage';
 import Home from './Main/Home';
 import ProductDetails from './ProductDetails';
 import ChatPage from './ChatPage';
+import ChatDetail from './ChatDetails';
 
 
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
         />
         <Route path="/product-details" element={<ProductDetails />} />
         <Route path="/chat" element={<ChatPage />} />
+        <Route path="/chat/:chatId" element={<ChatDetail />} />
       </Routes>
     </Router>
   );

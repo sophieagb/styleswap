@@ -6,16 +6,17 @@
   
   .chat-bubble-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 20px 0;
+    width: 75px;
+    height: 75px;
+    margin-left: 180px;
   }
-  
+
   .chat-bubble {
-    width: 65px;
-    height: 65px;
+    width: 75px;
+    height: 75px;
   }
-  
+
   .chat-list {
     flex-grow: 1;
     padding: 20px;
@@ -32,6 +33,10 @@
     background-color: #ffffff; 
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-link .username {
+    color: black;
   }
   
   .avatar img {
