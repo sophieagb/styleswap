@@ -1,224 +1,144 @@
-.product-details-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 15px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: sticky; 
-    top: 0;
-    z-index: 1000; 
+/* ProfilePage.css */
+.profile-container {
+    text-align: center;
+    padding: 0px;
   }
   
-  .heart-icon {
+  .profile-container h1 {
+    font-size: 2rem;
+  }
+  
+  .profile-container p {
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Prata', serif;
+    height: 100vh; 
+    background-color: #ffffff; 
+}
+
+.top-section {
+    width: 100%;
+    height: 20vh; 
+    background-color: #f7eaf7; 
+}
+
+/* Profile container */
+.profile-container {
+    text-align: center;
+}
+
+
+/* Profile picture styles */
+.profile-pic {
+    padding-top: 20px; 
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    
+}
+
+/* Username styling */
+.username {
+    font-size: 0.6px;
+    color: #201f21; 
+    font-family: 'Prata', serif;
+}
+
+/* Styling for the rest of the content */
+.content {
+    padding: 0%;
+}
+
+/* Cart icon positioning */
+.cart-icon {
     position: absolute;
-    top: 12px;
-    right: 16px;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  .heart-icon.liked {
-    filter: drop-shadow(0px 0px 5px red); /* Optional liked effect */
-  }
-
-  .product-details-header button {
-    background: none;
-    border: none;
-    color: black;
-    font-size: 28px;
-    cursor: pointer;
-  }
-  
-  .product-details-header h1 {
-    font-family: 'Prata', serif;
-    font-size: 23px;
-    font-weight: 400;
-    margin-left: 14px;
-  }
-  
-  .product-details-header .spacer {
-    flex-grow: 1;
-  }  
-
-  .product-details {
-    background-color: #f7eaf7;
-    padding: 40px;
-    padding-top: 10px; 
-  }
-  
-  .product-name {
-    font-size: 28px;
-    font-family: 'Prata', serif; 
-    text-align: center; 
-    margin-bottom: 15px; 
-    color: #000;
+    top: 20px; 
+    right: 20px;
+    padding-top: 20px;
+    padding-left: 4px;    
 }
 
-  .product-image {
-    display: block;
-    margin: 0 auto;
-    width: 60%;
-    border-radius: 15px;
-  }
-  
-  .product-description {
-    font-family: 'Prata', serif; 
-    text-align: center;
-    margin-bottom: 18px;
-    font-size: 17px;
-    color: #494848;
-  }
 
-  .divider {
-    height: 1px;
-    background-color: #b1adad;
-    margin: 20px 0; 
-    width: 100%; 
+/* Listings and Likes section */
+.listings {
+    margin-top: 38px;
 }
-  
-.size-selection {
-    text-align: center;
-    font-family: 'Nexa', sans-serif;
-    font-weight: 700;
-    font-size: 18px; 
-    line-height: 17px; 
-    color: #000000; 
-    margin-top: 13px;
-    margin-bottom: 20px;
-  }
-  
-.size-options {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px auto;
-    max-width: 335px; 
-  }
-  
-  .size-button {
-    width: 60px; 
-    height: 60px;
-    border: 1px solid #000;
-    border-radius: 8px;
-    background-color: #fff; 
-    color: #000; 
-    font-family: 'Prata', serif; 
-    font-size: 18px;
-    text-align: center;
-    line-height: 60px; 
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .size-button.active {
-    background-color: #000;
-    color: #fff;
-  }
-  
-  .size-button:hover {
-    background-color: #000;
-    color: #fff;
-  }
+.likes {
+    margin-top: 188px;
+}
 
+/* Make the "Active Listings" and "Liked Items" stand out */
+.listings p, .likes p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: sticky;
+}
 
-  .color-selection-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    margin-top: 15px; 
-  }
-
-  .section-title {
+  .box1 {
+    width: 78%;
+    height: 100px;
+    border: 5px solid #f4e0f4; 
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-family: 'Nexa', sans-serif;
-    font-weight: 700;
-    font-size: 18px; 
-    line-height: 17px; 
-    color: #000000; 
-    margin-top: 20px;
-  }
-  
-  .color-selection {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .color-option {
-    display: flex;
-    align-items: center;
-    border: 1px solid #000000;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .color-circle {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    margin-right: 10px; 
-  }
-  
-  .color-name {
-    font-family: 'Prata', serif;
-    font-size: 20px;
-    line-height: 27px;
-    color: #1b1a16;
-  }
-
-  .rating-section {
-    text-align: center;
-    margin-top: 28px;
-  }
-  
-  .rating-section h3 {
-    text-align: center;
-    font-family: 'Nexa', sans-serif;
-    font-weight: 700;
-    font-size: 19px; 
-    line-height: 17px; 
-    color: #000000; 
-    margin-top: 20px;
-  }
-  
-  .rating-stars {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-  }
-  
-  .rating-stars .star {
-    font-size: 20px;
-    color: black;
-  }
-  
-  .rating-stars .star.empty {
-    color: #000000; /* For unfilled stars */
-  }  
-  
-  
-  .add-to-cart-button {
-    background-color: #000;
-    color: #fff; 
-    font-size: 17px; 
-    font-weight: 400;
-    line-height: 22.13px;
-    text-align: center;
-    border: none;
     border-radius: 25px; 
-    padding: 10px 20px;
-    width: 80%; 
-    margin: 20px auto;
-    display: block; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease;
-    margin-top: 45px;
-  }
-  
-  .add-to-cart-button:hover {
-    background-color: #444;
-  }
-  
-  
+    position: absolute;
+    left: 50%;
+    top: 28%;
+    transform: translate(-50%); 
+}
+
+.box2 {
+    width: 78%;
+    height: 230px;
+    border: 5px solid #f4e0f4; 
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 25px; 
+    position: absolute;
+    left: 50%;
+    top: 51%;
+    bottom: 50%;
+    transform: translate(-50%); 
+}
+
+/* Grid layout for the images inside box2 */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 4%; 
+    margin-top: 10px;
+    margin-bottom: 50px;
+    
+}
+
+/* Image styling */
+.item-image {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    
+}
+
+.scroll-image{
+    margin-top: 220px;
+    width: 40px; 
+    height: 35px;
+}
+
+.plus-icon, .heart-icon {
+    width: 16px; 
+    height: 16px;
+    margin-left: 10px;
+}
+
+.plus-icon:hover, .heart-icon:hover {
+    cursor: pointer;
+}
