@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Main/Header'; // Correct import path for Header
 import Footer from './Main/Footer'; // Correct import path for Footer
 import './CartPage.css';
 
 const CartPage = () => {
-  const [cartItems, setCartItems] = useState([]); // Initial state is an empty array
+  const [cartItems, setCartItems] = useState([]);
 
+  // Fetch cart items from the backend
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/cart') // Call the backend cart API
+    fetch('http://127.0.0.1:5000/cart')
       .then((response) => response.json())
       .then((data) => {
-        console.log('Cart data fetched:', data); // Log the entire response
         if (Array.isArray(data)) {
-          setCartItems(data); // Set cart items directly if it's an array
+          setCartItems(data);
         } else {
           console.error('Unexpected data format for cart:', data);
         }
@@ -20,31 +19,52 @@ const CartPage = () => {
       .catch((error) => console.error('Error fetching cart items:', error));
   }, []);
 
-  const handleClearCart = () => {
+  // Function to delete a specific item
+  const handleDeleteItem = (itemId) => {
     fetch('http://127.0.0.1:5000/cart', {
-      method: 'DELETE',
+      method: 'POST', // Simulating item deletion
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: itemId, delete: true }),
     })
-      .then(() => setCartItems([])) // Clear the local cart items
+      .then(() => setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId)))
+      .catch((error) => console.error('Error deleting item:', error));
+  };
+
+  // Function to clear the entire cart
+  const handleClearCart = () => {
+    fetch('http://127.0.0.1:5000/cart', { method: 'DELETE' })
+      .then(() => setCartItems([]))
       .catch((error) => console.error('Error clearing cart:', error));
   };
 
   return (
     <div className="cart-page">
-      <Header />
+      {/* Custom Header */}
+      <div className="cart-header">
+        <h1 className="cart-title">STYLE SWAP</h1>
+        <img src="/images/shop.png" alt="Cart Icon" className="cart-icon-large" />
+      </div>
+
+      {/* Cart Items */}
       <div className="cart-container">
-        <h1>Your Cart</h1>
         {cartItems.length === 0 ? (
-          <p>Your cart is empty</p>
+          <p className="empty-cart">Your cart is empty</p>
         ) : (
           <ul className="cart-list">
-            {cartItems.map((item, index) => (
-              <li key={index} className="cart-item">
+            {cartItems.map((item) => (
+              <li key={item.id} className="cart-item">
+                <button
+                  className="delete-button"
+                  onClick={() => handleDeleteItem(item.id)}
+                >
+                  ✕
+                </button>
                 <img src={item.image} alt={item.name} className="cart-item-image" />
                 <div className="cart-item-details">
                   <h3>{item.name}</h3>
                   <p>Size: {item.size}</p>
                   <p>Color: {item.color}</p>
-                  <p>Price: ${item.price ? item.price.toFixed(2) : 'N/A'}</p>
+                  <p>Price: ${item.price.toFixed(2)}</p>
                 </div>
               </li>
             ))}
@@ -56,6 +76,8 @@ const CartPage = () => {
           </button>
         )}
       </div>
+
+      {/* Footer */}
       <Footer />
     </div>
   );

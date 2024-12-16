@@ -12,7 +12,7 @@ cart = []
 def get_cart():
     return jsonify(cart)  # Return the array directly
 
-# Route to add an item to the cart
+# Route to add an item to the cart (with duplicate prevention)
 @app.route('/cart', methods=['POST'])
 def add_to_cart():
     data = request.json
@@ -20,8 +20,12 @@ def add_to_cart():
     
     # Ensure all fields are present
     if all(field in data for field in required_fields):
-        cart.append(data)
-        return jsonify({'message': 'Item added to cart', 'cart': cart}), 201
+        # Prevent duplicate items
+        if not any(item['id'] == data['id'] for item in cart):
+            cart.append(data)
+            return jsonify({'message': 'Item added to cart', 'cart': cart}), 201
+        else:
+            return jsonify({'message': 'Item already in cart', 'cart': cart}), 200
     return jsonify({'error': 'Invalid item data'}), 400
 
 # Route to clear the cart
