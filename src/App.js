@@ -5,8 +5,7 @@ import SignUpPage from './SignUpPage';
 import SignInPage from './SignInPage';
 import Home from './Main/Home';
 import ProductDetails from './ProductDetails';
-import ChatPage from './ChatPage';
-import ChatDetail from './ChatDetails';
+import ProfilePage from './ProfilePage'
 
 
 const App = () => {
@@ -53,8 +52,10 @@ const App = () => {
           }
         />
         <Route path="/product-details" element={<ProductDetails />} />
-        <Route path="/chat" element={<ChatPage />} />
-        <Route path="/chat/:chatId" element={<ChatDetail />} />
+      
+        <Route path="/profile" element={<ProfilePage />} />
+      
+      
       </Routes>
     </Router>
   );
