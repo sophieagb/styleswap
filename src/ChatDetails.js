@@ -22,7 +22,7 @@ const ChatDetails = () => {
     {
       id: 3,
       sender: chat.username,
-      text: 'Yes! That works for me! See you there.',
+      text: 'Sounds great! Sunday works!',
       type: 'received',
     },
   ]);
@@ -71,7 +71,6 @@ const ChatDetails = () => {
         </div>
       </div>
 
-      {/* Messages Section */}
       <div className="chat-messages">
         {messages.map((message) => (
           <div
@@ -102,7 +101,6 @@ const ChatDetails = () => {
         <div ref={messagesEndRef}></div>
       </div>
 
-      {/* Input Section */}
       <div className="chat-input">
         <input
           type="text"

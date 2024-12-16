@@ -11,16 +11,16 @@ const ChatPage = () => {
       username: '@styleswap_user123',
       avatar: '/images/avatar1.png',
       item: '/images/chat1.png',
-      lastMessage: 'Seen',
-      timestamp: 'Yesterday',
+      lastMessage: 'Sounds great! Sunday works!',
+      timestamp: '10m ago',
     },
     {
       id: 2,
       username: '@styleswap_user456',
       avatar: '/images/avatar2.png',
       item: '/images/chat2.png',
-      lastMessage: 'Sounds great! Sunday works!',
-      timestamp: '2h ago',
+      lastMessage: 'Seen',
+      timestamp: '2n ago',
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const ChatPage = () => {
       avatar: '/images/avatar3.png',
       item: '/images/image1pg1.png',
       lastMessage: 'Seen',
-      timestamp: '10m ago',
+      timestamp: 'Yesterday',
     },
   ];
 
